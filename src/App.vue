@@ -24,14 +24,6 @@
       </button>
     </div>
     <router-view />
-    <div class="grid-wrapper">
-      <Card
-        v-for="(card, index) in cards"
-        :key="'card' + index"
-        :item="card"
-        :index="index"
-      />
-    </div>
   </div>
 </template>
 
