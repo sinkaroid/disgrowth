@@ -1,0 +1,52 @@
+{
+  "name": "disgrowth-visualization",
+  "version": "1.0.1",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:dry": "node test/api.test.js"
+  },
+  "keywords": [
+    "discord",
+    "discordbot",
+    "discordapp",
+    "discordstats",
+    "topgg",
+    "chart",
+    "chartjs",
+    "vue"
+  ],
+  "author": "sinkaroid",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chart.js": "^2.7.3",
+    "disgrowth": "^1.0.14",
+    "hchs-vue-charts": "^1.2.8",
+    "vue": "^2.5.17",
+    "vue-chartjs": "^3.4.0",
+    "vue-number-animation": "^1.1.2",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@expo/webpack-config": "^0.16.25",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-eslint": "^3.1.1",
+    "@vue/cli-service": "^3.1.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.2.5",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "sass-loader": "10.1.1",
+    "sass": "~1.32.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-console": "off"
+    }
+  }
+}
