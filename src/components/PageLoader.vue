@@ -15,10 +15,9 @@
       }
     },
     mounted() {
-      //set interval document.onreadystatechange
         setTimeout(() => {
             this.isloaded = true
-        }, 4000)
+        }, 3000)
       }
   }
 </script>
