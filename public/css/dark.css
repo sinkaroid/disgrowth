@@ -1,0 +1,18 @@
+:root {
+    --text: #ffffff;
+    --background: #1d1d23;
+}
+body {
+    background-color: var(--background) !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small,
+a {
+    color: var(--text) !important;
+}
