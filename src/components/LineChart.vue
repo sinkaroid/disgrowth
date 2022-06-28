@@ -1,7 +1,7 @@
 <script>
 import { Line, mixins } from "vue-chartjs";
-import { getRandomColor } from "../../src/base"
- import { getInfo } from '../base';
+import { getRandomColor } from "../../src/base";
+import { getInfo } from "../base";
 
 export default {
   extends: Line,
@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       chartData: "",
-        options: {
+      options: {
         scales: {
           yAxes: [
             {
@@ -43,8 +43,6 @@ export default {
   async created() {
     await getInfo()
       .then((response) => {
-        // JSON responses are automatically parsed.
-        
         //map all date inside response.stats_daily, and filter empty arrays.
         let dates = response.stats_daily.map((item) => {
           return item.date;
@@ -68,7 +66,6 @@ export default {
 
         //membalikan array dari kanan ke kiri.
         let reversedTotal_server = filteredTotal_server.reverse();
-        
 
         this.title = response.data.title;
         this.chartData = {

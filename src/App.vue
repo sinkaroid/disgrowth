@@ -1,24 +1,36 @@
 <template>
   <div id="app">
-     <PageLoader />
+    <PageLoader />
     <div id="nav">
       <ul>
-        <li><router-link to="/">{{ title }}</router-link></li>
+        <li>
+          <router-link to="/">{{ title }}</router-link>
+        </li>
         <li><router-link to="/graph">graph</router-link></li>
-        <li><a href="https://disgrowth.js.org/" style="text-decoration: none;" target="_blank">documentation</a></li>
+        <li>
+          <a
+            href="https://disgrowth.js.org/"
+            style="text-decoration: none"
+            target="_blank"
+            >documentation</a
+          >
+        </li>
       </ul>
     </div>
-    
 
-  <div id="mybutton">
-<button type="button" @click="darkThemeSwitch" class="switch">Switch</button>
-
-</div>
+    <div id="mybutton">
+      <button type="button" @click="darkThemeSwitch" class="switch">
+        Switch
+      </button>
+    </div>
     <router-view />
     <div class="grid-wrapper">
-      <Card v-for="(card, index) in cards" 
-            :key="'card'+index"
-            :item="card" :index="index" />
+      <Card
+        v-for="(card, index) in cards"
+        :key="'card' + index"
+        :item="card"
+        :index="index"
+      />
     </div>
   </div>
 </template>
@@ -26,29 +38,30 @@
 <script>
 import themeChanger from "./switch.js";
 import axios from "axios";
-import PageLoader from './components/PageLoader'
+import PageLoader from "./components/PageLoader";
 
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
       themeChanger: null,
       loading: false,
       all_users: null,
       title: null,
-      sca: null
-    }
+      sca: null,
+    };
   },
   components: {
-    PageLoader
+    PageLoader,
   },
   async mounted() {
-    try{
-      let response = await axios.get('https://api.github.com/repos/sinkaroid/disgrowth')
-      this.title = response.data.name
-      
-    }catch(err){
-      console.log(err.response.data)
+    try {
+      let response = await axios.get(
+        "https://api.github.com/repos/sinkaroid/disgrowth"
+      );
+      this.title = response.data.name;
+    } catch (err) {
+      console.log(err.response.data);
     }
   },
   methods: {
@@ -79,14 +92,12 @@ export default {
       .finally(() => this.loading = false)
   },
   */
-}
-
-
+};
 </script>
 
 <style>
 #app {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -128,21 +139,20 @@ h2 {
   font-size: 1.25em;
 }
 
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
 
-  .grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
-
-  #btndisclaimer {
+#btndisclaimer {
   position: fixed;
   right: 0;
   bottom: 0;
 }
 
 .switch {
-  background-color : #31B0D5;
+  background-color: #31b0d5;
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
