@@ -14,6 +14,7 @@ module.exports = {
     "vue/valid-v-model": "off",
     "semi": ["warn", "always"],
     "quotes": ["warn", "double"],
+    "indent": ["error", 2]
   },
   parserOptions: {
     parser: "babel-eslint"
