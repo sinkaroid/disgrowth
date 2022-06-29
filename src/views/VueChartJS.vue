@@ -6,42 +6,90 @@
     <img :src="avatar" alt="avatar" class="avatar" width="200" />
     <br /><br />
     <a :href="topgglink" target="_blank" class="switch">Visit on Top.gg</a>
-    <br><br>
+    <br /><br />
     <table class="styled-table">
-    <thead>
+      <thead>
         <tr>
-            <th><h3><b>{{ today_ya_sekarang }}</b></h3></th>
-            <th><h3><b>Stats</b></h3></th>
+          <th>
+            <h3>
+              <b>{{ today_ya_sekarang }}</b>
+            </h3>
+          </th>
+          <th>
+            <h3><b>Statistics</b></h3>
+          </th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr>
-            <td><h3>Total servers</h3></td>
-            <td><h3><number
-        ref="number1"
-        :from="1"
-        :to="today"
-        :format="theFormat"
-        :duration="7"
-        :delay="2"
-        easing="Power1.easeOut"
-      /></h3></td>
+          <td><h3>Current servers</h3></td>
+          <td>
+            <h3>
+              <number
+                ref="number1"
+                :from="1"
+                :to="today"
+                :format="theFormat"
+                :duration="7"
+                :delay="2"
+                easing="Power1.easeOut"
+              />
+            </h3>
+          </td>
         </tr>
         <tr class="active-row">
-            <td><h3>New servers</h3></td>
-            <td><h3>+<number
-        ref="number1"
-        :from="1"
-        :to="today_growth"
-        :format="theFormat"
-        :duration="3"
-        :delay="2"
-        easing="Power1.easeOut"
-      /></h3></td>
+          <td><h3>New servers</h3></td>
+          <td>
+            <h3>
+              +<number
+                ref="number1"
+                :from="1"
+                :to="today_growth"
+                :format="theFormat"
+                :duration="3"
+                :delay="2"
+                easing="Power1.easeOut"
+              />
+            </h3>
+          </td>
         </tr>
-        <!-- and so on... -->
-    </tbody>
-</table><br>
+
+        <tr class="active-row">
+          <td><h3>Current votes</h3></td>
+          <td>
+            <h3>
+              <number
+                ref="number1"
+                :from="1"
+                :to="total_votes"
+                :format="theFormat"
+                :duration="10"
+                :delay="2"
+                easing="Power1.easeOut"
+              />
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="active-row">
+          <td><h3>New votes</h3></td>
+          <td>
+            <h3>
+              +<number
+                ref="number1"
+                :from="1"
+                :to="today_votes"
+                :format="theFormat"
+                :duration="3"
+                :delay="2"
+                easing="Power1.easeOut"
+              />
+            </h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
 
     <div class="columns">
       <div class="column">
@@ -139,27 +187,107 @@
         </h2>
       </div>
     </div>
-    <h3>
-      According this statistics it can be concluded, {{ name }} will get
-      <font color="red"
-        ><b>+{{ approximate_server_growth_three_months }}</b></font
-      >
-      server growth in the next 3 months
-    </h3>
-    <h2>
-      Then will get
-      <font color="red"
-        ><b>+{{ approximate_server_growth_annually }}</b></font
-      >
-      server growth in the next year
-    </h2>
-    <iframe
-      src="https://github.com/sponsors/sinkaroid/button"
-      title="Sponsor sinkaroid"
-      height="35"
-      width="116"
-      style="border: 0"
-    ></iframe>
+    <h1>According to the data above, we can predicts</h1>
+    <br />
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>
+            <h3>
+              <b>{{ name }} bot</b>
+            </h3>
+          </th>
+          <th>
+            <h3><b>Approximate future data</b></h3>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><h2>After 3 months</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }} should
+              get<number
+                ref="number1"
+                :from="1"
+                :to="approximate_server_growth_three_months"
+                :format="theFormat"
+                :duration="5"
+                :delay="1"
+                easing="Power1.easeOut"
+              />
+              new servers in the next 3 months
+            </h2>
+          </td>
+        </tr>
+        <tr class="active-row">
+          <td><h2>After 6 months</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }} should
+              get<number
+                ref="number1"
+                :from="1"
+                :to="approximate_after_6"
+                :format="theFormat"
+                :duration="5"
+                :delay="1"
+                easing="Power1.easeOut"
+              />
+              new servers in the next 6 months
+            </h2>
+          </td>
+        </tr>
+
+        <tr class="active-row">
+          <td><h2>After a year</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }} should
+              get<number
+                ref="number1"
+                :from="1"
+                :to="approximate_server_growth_annually"
+                :format="theFormat"
+                :duration="10"
+                :delay="2"
+                easing="Power1.easeOut"
+              />
+              new servers in the next year
+            </h2>
+          </td>
+        </tr>
+
+        <tr class="active-row">
+          <td><h2>Total servers (A year later)</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }} should
+              get<number
+                ref="number1"
+                :from="1"
+                :to="estimate_total_server_in_the_next_year"
+                :format="theFormat"
+                :duration="10"
+                :delay="2"
+                easing="Power1.easeOut"
+              />total servers
+            </h2>
+          </td>
+        </tr>
+
+        <tr class="active-row">
+          <td><h2>Monthly rewards</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }}'s dev should
+              get {{ approximate_credits_rewards_monthly }} on Top.gg credits
+            </h2>
+          </td>
+        </tr>
+      </tbody>
+    </table>
     <br /><br />
   </section>
 </template>
@@ -183,10 +311,10 @@ export default {
   },
   data() {
     return {
-      avatar: "https://i.stack.imgur.com/frlIf.png",
+      avatar: "https://cdn.discordapp.com/embed/avatars/0.png",
       topgglink: null,
       datacollection: null,
-      name: null,
+      name: "Lewd",
       description: null,
       average_server_growth_monthly: null,
       average_server_growth_daily: null,
@@ -199,6 +327,9 @@ export default {
       today: null,
       today_growth: null,
       today_ya_sekarang: null,
+      today_votes: null,
+      approximate_after_6: null,
+      estimate_total_server_in_the_next_year: null,
     };
   },
   async created() {
@@ -223,6 +354,11 @@ export default {
       this.today_growth = response.stats_daily[0].server_growth;
       this.today_ya_sekarang = response.stats_daily[0].date;
       this.topgglink = `https://top.gg/bot/${response.data.id}`;
+      this.today_votes = response.stats_daily[0].votes_growth;
+      this.approximate_after_6 = response.average_server_growth_monthly * 6;
+      this.estimate_total_server_in_the_next_year =
+        response.data.server_count +
+        response.approximate_server_growth_annually;
     });
   },
   methods: {
@@ -233,7 +369,8 @@ export default {
       return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     },
     theFormat(number) {
-      return number.toFixed();
+      let nf = new Intl.NumberFormat("en-US");
+      return nf.format(number.toFixed(0));
     },
     completed() {
       console.log("Animation ends!");
@@ -270,39 +407,48 @@ export default {
   animation: float 6s ease-in-out infinite;
 }
 
+.small-avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 3px solid #22b99b;
+}
+
 .styled-table {
   margin-left: auto;
   margin-right: auto;
-    border-collapse: collapse;
-    
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-collapse: collapse;
+
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table thead tr {
-    background-color: #22b99b;
-    color: #ffffff;
-    text-align: left;
+  background-color: #22b99b;
+  color: #ffffff;
+  text-align: left;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+  padding: 12px 15px;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
-
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
 
 .styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
+  font-weight: bold;
+  color: #009879;
 }
 </style>

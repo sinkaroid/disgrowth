@@ -23,13 +23,14 @@
       </button>
     </div>
     <router-view />
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import themeChanger from "./switch.js";
 import axios from "axios";
-
+import Footer from "./components/Footer";
 
 export default {
   name: "app",
@@ -44,6 +45,7 @@ export default {
   },
   components: {
     //PageLoader,
+    Footer,
   },
   async mounted() {
     try {
@@ -63,26 +65,6 @@ export default {
   created() {
     this.themeChanger = new themeChanger();
   },
-
-  /*
-  mounted () {
-    this.loading = true;
-    axios
-      .get('https://reqres.in/api/users?page=1')
-      .then(response => (this.all_users = response.data.data))
-      .catch(error => console.log(error))
-      .finally(() => this.loading = false)
-
-      axios({
-        method: 'get',
-        url: 'https://nekos.life/api/v2/img/pussy',
-        timeout: 5000
-      })
-      .then(response => (this.title = response.data.msg))
-      .catch(error => console.log(error))
-      .finally(() => this.loading = false)
-  },
-  */
 };
 </script>
 
