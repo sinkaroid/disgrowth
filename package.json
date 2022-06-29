@@ -1,5 +1,5 @@
 {
-  "name": "disgrowth-visualization",
+  "name": "disgrow-visualization",
   "version": "1.0.3",
   "scripts": {
     "serve": "vue-cli-service serve",
