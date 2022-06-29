@@ -17,7 +17,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isloaded = true;
-    }, 6000);
+    }, 5000);
   },
 };
 </script>
@@ -36,7 +36,7 @@ $colors: #8cc271, #69beeb, #f5aa39, #e9643b;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.723);
   z-index: 999;
 }
 

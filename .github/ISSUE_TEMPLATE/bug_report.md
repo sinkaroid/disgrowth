@@ -20,7 +20,7 @@ A clear and concise description of what you expected to happen.
  - OS: [e.g. iOS]
  - Node version: [e.g. v12.16.0]
  - Vue version: [e.g. v2.6.11]
- - Disgrowth version: [e.g. 1.0.14]
+ - Disgrow version: [e.g. 1.0.14]
  - Vue-chartjs version: [e.g. 3.4.0]
 
 **Additional context**

@@ -1,35 +1,47 @@
 <template>
   <section class="container">
+    <PageLoader />
     <h1>{{ name }} bot</h1>
     <br />
     <img :src="avatar" alt="avatar" class="avatar" width="200" />
     <br /><br />
     <a :href="topgglink" target="_blank" class="switch">Visit on Top.gg</a>
-    <h2>{{ today_ya_sekarang }}</h2>
-    <h1>
-      <code>
-        <number
-          ref="number1"
-          :from="1"
-          :to="today"
-          :format="theFormat"
-          :duration="10"
-          :delay="2"
-          easing="Power1.easeOut"
-        />
-        (+<number
-          ref="number1"
-          :from="1"
-          :to="today_growth"
-          :format="theFormat"
-          :duration="3"
-          :delay="2"
-          easing="Power1.easeOut"
-        />
-        new servers)
-      </code>
-    </h1>
-    <br />
+    <br><br>
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th><h3><b>{{ today_ya_sekarang }}</b></h3></th>
+            <th><h3><b>Stats</b></h3></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><h3>Total servers</h3></td>
+            <td><h3><number
+        ref="number1"
+        :from="1"
+        :to="today"
+        :format="theFormat"
+        :duration="7"
+        :delay="2"
+        easing="Power1.easeOut"
+      /></h3></td>
+        </tr>
+        <tr class="active-row">
+            <td><h3>New servers</h3></td>
+            <td><h3>+<number
+        ref="number1"
+        :from="1"
+        :to="today_growth"
+        :format="theFormat"
+        :duration="3"
+        :delay="2"
+        easing="Power1.easeOut"
+      /></h3></td>
+        </tr>
+        <!-- and so on... -->
+    </tbody>
+</table><br>
 
     <div class="columns">
       <div class="column">
@@ -157,11 +169,13 @@ import LineChart from "@/components/LineChart";
 import BarChart from "@/components/BarChart";
 import LineChartHourly from "@/components/LineChartHourly";
 import LineChartVotes from "@/components/LineChartVotes";
-import { getInfo } from "../base";
+import { botInfo } from "../base";
+import PageLoader from "@/components/PageLoader";
 
 export default {
   name: "VueChartJS",
   components: {
+    PageLoader,
     LineChart,
     BarChart,
     LineChartHourly,
@@ -169,7 +183,7 @@ export default {
   },
   data() {
     return {
-      avatar: null,
+      avatar: "https://i.stack.imgur.com/frlIf.png",
       topgglink: null,
       datacollection: null,
       name: null,
@@ -189,7 +203,7 @@ export default {
   },
   async created() {
     this.fillData();
-    await getInfo().then((response) => {
+    await botInfo().then((response) => {
       this.avatar = response.data.avatar;
       this.name = response.data.title;
       this.total_votes = response.data.total_votes;
@@ -254,5 +268,41 @@ export default {
   overflow: hidden;
   transform: translatey(0px);
   animation: float 6s ease-in-out infinite;
+}
+
+.styled-table {
+  margin-left: auto;
+  margin-right: auto;
+    border-collapse: collapse;
+    
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #22b99b;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
 }
 </style>

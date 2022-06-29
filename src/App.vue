@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <PageLoader />
     <div id="nav">
       <ul>
         <li>
@@ -9,7 +8,7 @@
         <li><router-link to="/graph">graph</router-link></li>
         <li>
           <a
-            href="https://disgrowth.js.org/"
+            href="https://disgrow.js.org/"
             style="text-decoration: none"
             target="_blank"
             >documentation</a
@@ -30,7 +29,7 @@
 <script>
 import themeChanger from "./switch.js";
 import axios from "axios";
-import PageLoader from "./components/PageLoader";
+
 
 export default {
   name: "app",
@@ -44,12 +43,12 @@ export default {
     };
   },
   components: {
-    PageLoader,
+    //PageLoader,
   },
   async mounted() {
     try {
       let response = await axios.get(
-        "https://api.github.com/repos/sinkaroid/disgrowth"
+        "https://api.github.com/repos/sinkaroid/disgrow"
       );
       this.title = response.data.name;
     } catch (err) {
@@ -89,7 +88,7 @@ export default {
 
 <style>
 #app {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

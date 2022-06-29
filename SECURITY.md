@@ -1,4 +1,4 @@
-# Disgrowth-visualization Security
+# Disgrow-visualization Security
 
 ## Reporting vulnerabilities
 
