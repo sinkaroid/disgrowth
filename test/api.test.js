@@ -1,5 +1,5 @@
 const Disgrow = require("disgrow");
-const c = require("../src/config");
+const { bot_id } = require("../src/config");
 
-const bot = new Disgrow(c.bot_id);
+const bot = new Disgrow(bot_id);
 bot.myStats().then((res) => { console.log("myStats", res); });
