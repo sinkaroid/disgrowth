@@ -15,7 +15,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 ## Getting started
 1. Read the prerequisites, make sure your bots is passed the test, and install: `npm install` / `yarn install`
 
-2. Fill the `src/config.json` with your bot's id, and run `npm run test:unit`.
+2. Fill the `src/config.json` with your bot's id.
 
 3. Test the unit first by running `npm run test:dry`, You should get an object returns if passed, otherwise does not met the requirements, then run `npm run serve`
 
