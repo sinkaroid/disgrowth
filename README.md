@@ -1,15 +1,10 @@
-## Disgrow-visualization
-  
-Create your web visualization discord bots growth and statistics with ease. Updates hourly  
-[![Testing](https://github.com/sinkaroid/disgrow-visualization/workflows/Testing/badge.svg)](https://github.com/sinkaroid/disgrow/actions/workflows/disgrow.yml) [![Deps](https://img.shields.io/npm/v/disgrow?label=disgrow&logo=npm&logoColor=white&color=blue)](https://github.com/sinkaroid/disgrow/actions/workflows/disgrow.yml)
+ [![Testing](https://github.com/sinkaroid/disgrow-visualization/workflows/Testing/badge.svg)](https://github.com/sinkaroid/disgrow/actions/workflows/disgrow.yml) [![Deps](https://img.shields.io/npm/v/disgrow?label=disgrow&logo=npm&logoColor=white&color=blue)](https://github.com/sinkaroid/disgrow/actions/workflows/disgrow.yml)
 
 ## The problem
 There is a plenty monitoring and observability service for cloud-scale application, such as StatsD, DataDog, Prometheus, and etc. Those services are great for monitoring, but require a lot of effort to posts every parts and setup properly, many people probably still confused how to extends their discord bots with those services. Apart from complexity, the services is running, means It will consume extra Memory than usual, especially DataDog.
 
 ## The solution
 There is a simple way to monitor your bot's growth. This library allows you to check your bot's growth statistics, no need posts any data, no need to extends or change your bot constructor, out of the box and less of pain.  
-
-For non JavaScript libraries, [there is an API for it](https://github.com/sinkaroid/disgrow/tree/api)! 
 
 ## Prerequisites
 <table>
@@ -18,7 +13,7 @@ For non JavaScript libraries, [there is an API for it](https://github.com/sinkar
 That's all! All you need just keep posting your bot stats, and you are good to go.
 
 ## Getting started
-1. Read the prerequisites, make sure your bots is passed the test, and install the dependencies: `npm install` / `yarn install`
+1. Read the prerequisites, make sure your bots is passed the test, and install: `npm install` / `yarn install`
 
 2. Fill the `src/config.json` with your bot's id, and run `npm run test:unit`.
 
@@ -27,7 +22,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 ### For development and testing
 After the testing pass, you can run `npm run serve` to start the development server.  
 
-You can adjust anything with your own stuff apart from the default templates, and run `npm run build` to build the files.
+You can adjust anything with your own stuff apart from the default templates, and run `npm run build`
 
 ### For production ready
 The final steps is deploying the stuff, after you have tested the unit, You can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `src/config.json` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
@@ -36,6 +31,13 @@ The final steps is deploying the stuff, after you have tested the unit, You can 
 - [Netlify](https://cli.vuejs.org/guide/deployment.html#netlify)
 - [Vercel](https://cli.vuejs.org/guide/deployment.html#vercel)
 - [Firebase](https://cli.vuejs.org/guide/deployment.html#firebase)
+
+## Acknowledgements
+
+I hope you have found this project useful. All the major credit really goes to the topgg which allows this services to operate.
+
+- [topgg](https://top.gg)
+- [dblstatistics](dblstatistics.com)
 
 ## Legal
 This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel
