@@ -1,11 +1,13 @@
 {
   "name": "disgrow-visualization",
-  "version": "1.0.4",
+  "version": "1.0.5",
+  "description": "Create your web visualization discord bots growth and statistics with ease.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:dry": "node test/api.test.js"
+    "test:dry": "node test/api.test.js",
+    "test:mocha": "mocha --timeout 15000 test/mocha.test.js"
   },
   "keywords": [
     "discord",
@@ -22,7 +24,8 @@
   "dependencies": {
     "axios": "^0.27.2",
     "chart.js": "^2.7.3",
-    "disgrow": "^1.0.16",
+    "disgrow": "^1.0.19",
+    "hchs-vue-charts": "^1.2.8",
     "vue": "^2.5.17",
     "vue-chartjs": "^3.4.0",
     "vue-number-animation": "^1.1.2",
@@ -37,8 +40,10 @@
     "@vue/cli-service": "^3.1.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.2.5",
+    "chai": "^4.3.6",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "mocha": "^10.0.0",
     "sass": "~1.32.0",
     "sass-loader": "10.1.1",
     "vue-template-compiler": "^2.6.14"
