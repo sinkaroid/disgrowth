@@ -8,23 +8,38 @@ There is a simple way to monitor your bot's growth. This library allows you to c
 
 ## Prerequisites
 <table>
-	<td><b>NOTE:</b> Your bot must be listed on <a href="https://top.gg">top.gg</a>, because we will take advantage of top.gg to get the increments data, and You must <strong>Posting bot stats</strong> at least once per hour, there is a <code>stats_hourly</code> property in this module, otherwise null as it misleading.</td>
+	<td><b>NOTE:</b> Your bot must be listed on <a href="https://top.gg">top.gg</a>, because we will take advantage of top.gg to get the increments data, and You must <strong>Posting bot stats</strong> at least once per hour, there is a <code>stats_hourly</code> property in this module, otherwise null as it misleading and the graph will not accurate.</td>
 </table>
 That's all! All you need just keep posting your bot stats, and you are good to go.
 
 ## Getting started
 1. Read the prerequisites, make sure your bots is passed the test, and install: `npm install` / `yarn install`
 
-2. Fill the `src/config.json` with your bot's id.
+2. Change the `src/config.json` with your bot's id.
 
-3. Test the unit first by running `npm run test:dry`, You should get an object returns if passed, otherwise does not met the requirements, then run `npm run serve`
+3. Test the unit first by running `npm run test:mocha`, You should get passing test like:
 
-### For development and testing
-After the testing pass, you can run `npm run serve` to start the development server.  
+```
+  Check the prerequisites
+    Get the bots increments
+      ✔ data should appear in the topgg
+      ✔ data should have a key called 'title'
+      ✔ data should have a key called 'total_votes'
+      ✔ data should have a key called 'server_count'
+      ✔ data should have property 'average_server_growth_daily' with value of type number
+      ✔ data should have property 'average_server_growth_monthly' with value of type number
+      ✔ data should have property 'approximate_credits_rewards_monthly' with value of type string
+      ✔ data should have property 'approximate_server_growth_annually' with value of type number
 
-You can adjust anything with your own stuff apart from the default templates, and run `npm run build`
 
-### For production ready
+  8 passing (3s)
+```
+> If there is an error, means does not meet the requirements. Make sure follow the [#prerequisites](#prerequisites).
+
+4. Run `npm run serve` to start the server, for building files run `npm run build`
+
+
+## For production ready
 The final steps is deploying the stuff, after you have tested the unit, You can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `src/config.json` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
 
 - [Github pages](https://cli.vuejs.org/guide/deployment.html#github-pages)
@@ -34,8 +49,9 @@ The final steps is deploying the stuff, after you have tested the unit, You can 
 
 ## Acknowledgements
 
-I hope you have found this project useful. All the major credit really goes to the [Topgg](https://top.gg/) and [Dblstatistics](https://dblstatistics.com/) for actionable data, [Vuejs](https://vuejs.org) and [Vue-chartjs](https://vue-chartjs.org/) which allow this services to be used.
+I hope you have found this project useful. All the major credit really goes to the [Topgg](https://top.gg/) and [Dblstatistics](https://dblstatistics.com/) for actionable data, [Vuejs](https://vuejs.org) and [Chart.js](https://www.chartjs.org//) which allow this services to be used.
 
 ## Legal
+[![](https://img.shields.io/discord/831142227676889088)](https://discord.gg/8wj4vM5hHM)  
 This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel
-like this tool deserves an attribution, mention it. It won't hurt anybody
+like this tool deserves an attribution, mention it. It won't hurt anybody.
