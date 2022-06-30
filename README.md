@@ -1,4 +1,4 @@
- [![Testing](https://github.com/sinkaroid/disgrow-visualization/workflows/Testing/badge.svg)](https://github.com/sinkaroid/disgrow/actions/workflows/disgrow.yml) [![Deps](https://img.shields.io/npm/v/disgrow?label=disgrow&logo=npm&logoColor=white&color=blue)](https://disgrow.js.org)
+ [![Testing](https://github.com/sinkaroid/disgrow-visualization/workflows/Test%20unit/badge.svg)](https://github.com/sinkaroid/disgrow/actions/workflows/mocha.yml) [![Deps](https://img.shields.io/npm/v/disgrow?label=disgrow&logo=npm&logoColor=white&color=blue)](https://disgrow.js.org)
 
 ## The problem
 There is a plenty monitoring and observability service for cloud-scale application, such as StatsD, DataDog, Prometheus, and etc. Those services are great for monitoring, but require a lot of effort to posts every parts and setup properly, many people probably still confused how to extends their discord bots with those services. Apart from complexity, the services is running, means It will consume extra Memory than usual, especially DataDog.
