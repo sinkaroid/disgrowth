@@ -34,10 +34,7 @@ The final steps is deploying the stuff, after you have tested the unit, You can 
 
 ## Acknowledgements
 
-I hope you have found this project useful. All the major credit really goes to the topgg which allows this services to operate.
-
-- [topgg](https://top.gg)
-- [dblstatistics](dblstatistics.com)
+I hope you have found this project useful. All the major credit really goes to the [Topgg](https://top.gg/) and [Dblstatistics](https://dblstatistics.com/) for actionable data, [Vuejs](https://vuejs.org) and [Vue-chartjs](https://vue-chartjs.org/) which allow this services to be used.
 
 ## Legal
 This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel
