@@ -1,12 +1,12 @@
 <template>
   <div class="container-fluid text-center bg-light p-5 fixed-bottom">
     <p>
-      Sinkaroid &copy; 2022. Created with <a href="http://vuejs.org">Vue</a>,
-      <a href="http://vue-chartjs.org">Vue-chartjs</a> and
-      <a href="https://github.com/sinkaroid/disgrow">disgrow</a>
+      Sinkaroid &copy; 2022. Created with <a href="http://vuejs.org">Vuejs</a>,
+      <a href="https://www.chartjs.org/">Chart.js</a> and
+      <a href="https://github.com/sinkaroid/disgrow">Disgrow</a>
     </p>
     <p>
-      Create your own web-app statistics by using this
+      Create your own bot growth visualization using this
       <a
         href="https://github.com/sinkaroid/disgrow-visualization"
         target="_blank"

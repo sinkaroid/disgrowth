@@ -187,7 +187,7 @@
         </h2>
       </div>
     </div>
-    <h1>According to the data above, we can predicts</h1>
+    <h1>According those data, we can predicts</h1>
     <br />
     <table class="styled-table">
       <thead>
@@ -198,7 +198,7 @@
             </h3>
           </th>
           <th>
-            <h3><b>Approximate future data</b></h3>
+            <h3><b>Approximate</b></h3>
           </th>
         </tr>
       </thead>
