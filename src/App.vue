@@ -29,7 +29,6 @@
 
 <script>
 import themeChanger from "./switch.js";
-import axios from "axios";
 import Footer from "./components/Footer";
 
 export default {
@@ -39,23 +38,13 @@ export default {
       themeChanger: null,
       loading: false,
       all_users: null,
-      title: null,
+      title: "The discord bots growth",
       sca: null,
     };
   },
   components: {
     //PageLoader,
     Footer,
-  },
-  async mounted() {
-    try {
-      let response = await axios.get(
-        "https://api.github.com/repos/sinkaroid/disgrow"
-      );
-      this.title = response.data.name;
-    } catch (err) {
-      console.log(err.response.data);
-    }
   },
   methods: {
     darkThemeSwitch() {
