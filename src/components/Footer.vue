@@ -6,11 +6,11 @@
       <a href="https://github.com/sinkaroid/disgrow">Disgrow</a>
     </p>
     <p>
-      Create your own bot growth visualization using this
+      Visualize your own Discord bots growth web-app using
       <a
         href="https://github.com/sinkaroid/disgrow-visualization"
         target="_blank"
-        >template</a
+        >this template</a
       ><br /><br />
       <iframe
         src="https://github.com/sponsors/sinkaroid/button"

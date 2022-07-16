@@ -4,7 +4,9 @@
 There is a plenty monitoring and observability service for cloud-scale application, such as StatsD, DataDog, Prometheus, and etc. Those services are great for monitoring, but require a lot of effort to posts every parts and setup properly, many people probably still confused how to extends their discord bots with those services. Apart from complexity, the services is running, means It will consume extra Memory than usual, especially DataDog.
 
 ## The solution
-There is a simple way to monitor your bot's growth. This library allows you to check your bot's growth statistics, no need posts any data, no need to extends or change your bot constructor, out of the box and less of pain.  
+There is a simple way to monitor your bot's growth. This [library](https://www.npmjs.com/package/disgrow) allows you to check your bot's growth statistics, no need posts any data, no need to extends or change your bot constructor, out of the box and less of pain.  
+
+For non JavaScript libraries, [there is an API for it](https://github.com/sinkaroid/disgrow/tree/api)!  
 
 ## Prerequisites
 <table>
@@ -40,7 +42,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 
 
 ## For production ready
-The final steps is deploying the stuff, after you have tested the unit, You can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `src/config.json` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
+The final steps is deploying the stuff, after you have test it all, Simply you can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `src/config.json` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
 
 - [Github pages](https://cli.vuejs.org/guide/deployment.html#github-pages)
 - [Netlify](https://cli.vuejs.org/guide/deployment.html#netlify)
@@ -49,9 +51,8 @@ The final steps is deploying the stuff, after you have tested the unit, You can 
 
 ## Acknowledgements
 
-I hope you have found this project useful. All the major credit really goes to the [Topgg](https://top.gg/) and [Dblstatistics](https://dblstatistics.com/) for actionable data, [Vuejs](https://vuejs.org) and [Chart.js](https://www.chartjs.org//) which allow this services to be used.
+I hope you have found this project useful. All the major credit really goes to the [Topgg](https://top.gg/) and [Dblstatistics](https://dblstatistics.com/) for actionable data, [Vuejs](https://vuejs.org) and [Chart.js](https://www.chartjs.org/) which allow this services to be used.
 
-## Legal
-[![](https://img.shields.io/discord/831142227676889088)](https://discord.gg/8wj4vM5hHM)  
+## Legal 
 This tool can be freely copied, modified, altered, distributed without any attribution whatsoever. However, if you feel
 like this tool deserves an attribution, mention it. It won't hurt anybody.
