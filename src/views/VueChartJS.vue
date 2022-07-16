@@ -314,7 +314,7 @@ export default {
       avatar: "https://cdn.discordapp.com/embed/avatars/0.png",
       topgglink: null,
       datacollection: null,
-      name: "Lewd",
+      name: "Loading",
       description: null,
       average_server_growth_monthly: null,
       average_server_growth_daily: null,

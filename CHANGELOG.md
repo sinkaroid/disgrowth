@@ -1,3 +1,9 @@
+#### 1.0.6 (2022-07-16)
+
+##### Chores
+
+* **release:**  1.0.6-alpha (13241c4a)
+
 #### 1.0.5 (2022-06-30)
 
 ##### Build System / Dependencies
