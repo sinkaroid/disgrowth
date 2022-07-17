@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 const Disgrow = require("disgrow");
-const { bot_id } = require("../src/config");
+const { botId } = require("../config");
 const chai = require("chai");
-const bot = new Disgrow(bot_id);
+const bot = new Disgrow(botId);
 const expect = chai.expect;
 
 describe("Check the prerequisites", () => {
