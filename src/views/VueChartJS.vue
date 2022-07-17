@@ -297,7 +297,7 @@ import LineChart from "@/components/LineChart";
 import BarChart from "@/components/BarChart";
 import LineChartHourly from "@/components/LineChartHourly";
 import LineChartVotes from "@/components/LineChartVotes";
-import { botInfo } from "../base";
+import { inMemoryBotInfo } from "../base";
 import PageLoader from "@/components/PageLoader";
 
 export default {
@@ -334,7 +334,7 @@ export default {
   },
   async created() {
     this.fillData();
-    await botInfo().then((response) => {
+    await inMemoryBotInfo().then((response) => {
       this.avatar = response.data.avatar;
       this.name = response.data.title;
       this.total_votes = response.data.total_votes;

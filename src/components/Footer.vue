@@ -8,7 +8,7 @@
     <p>
       Visualize your own Discord bots growth web-app using
       <a
-        href="https://github.com/sinkaroid/disgrow-visualization"
+        href="https://github.com/sinkaroid/disgrowth"
         target="_blank"
         >this template</a
       ><br /><br />

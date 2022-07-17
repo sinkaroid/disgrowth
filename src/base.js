@@ -1,5 +1,6 @@
 import Disgrow from "disgrow";
-import { bot_id } from "../src/config";
+import { botId, memCacheExpire, alertOnFetch } from "../config";
+import lscache from "lscache";
 
 export function getRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -11,7 +12,7 @@ export function getRandomColor() {
 }
 
 export async function getInfo() {
-  const bot = new Disgrow(bot_id);
+  const bot = new Disgrow(botId);
   const info = await bot.myStats().catch(err => {
     alert("Error: " + err);
   });
@@ -21,4 +22,35 @@ export async function getInfo() {
 export const botInfo = async () => {
   const info = await getInfo();
   return info;
+};
+
+export const inMemoryBotInfo = async () => {
+  if (!lscache.get("bot_data")) {
+    switch (alertOnFetch) {
+    case true:
+      alert("api firing");
+      break;
+
+    case false:
+      console.log("api firing");
+      break;
+    }
+
+    const fetchBot = await getInfo();
+    lscache.set("bot_data", JSON.stringify(fetchBot), memCacheExpire);
+    return fetchBot;
+  } else {
+    switch (alertOnFetch) {
+    case true:
+      alert("api does not firing");
+      break;
+
+    case false:
+      console.log("api does not firing");
+      break;
+    }
+    const fetchBotFromCache = lscache.get("bot_data");
+    return JSON.parse(fetchBotFromCache);
+  }
+  
 };

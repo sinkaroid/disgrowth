@@ -17,7 +17,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 ## Getting started
 1. Read the prerequisites, make sure your bots is passed the test, and install: `npm install` / `yarn install`
 
-2. Change the `src/config.json` with your bot's id.
+2. Change the `config.js` botId property to your bot's id.
 
 3. Test the unit first by running `npm run test:mocha`, You should get passing test like:
 
@@ -42,7 +42,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 
 
 ## For production ready
-The final steps is deploying the stuff, after you have test it all, Simply you can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `src/config.json` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
+The final steps is deploying the stuff, after you have test it all, Simply you can using this [template](https://github.com/sinkaroid/disgrow-visualization/generate), and fill the `config.js` with your bot's id and read the [Vuejs deployment guide](https://cli.vuejs.org/guide/deployment.html)
 
 - [Github pages](https://cli.vuejs.org/guide/deployment.html#github-pages)
 - [Netlify](https://cli.vuejs.org/guide/deployment.html#netlify)

@@ -1,7 +1,7 @@
 <script>
 import { Bar, mixins } from "vue-chartjs";
 import { getRandomColor } from "../../src/base";
-import { getInfo } from "../base";
+import { inMemoryBotInfo } from "../base";
 
 export default {
   extends: Bar,
@@ -41,7 +41,7 @@ export default {
     this.renderChart(this.chartData, this.options);
   },
   async created() {
-    await getInfo()
+    await inMemoryBotInfo()
       .then((response) => {
         //map all date inside response.data.stats_daily, and filter empty arrays.
         let dates = response.stats_daily.map((item) => {

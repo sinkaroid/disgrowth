@@ -8,6 +8,12 @@
 </template>
 
 <script>
+import lscache from "lscache";
+
+let loading;
+if (!lscache.get("bot_data")) loading = 5 *1000;
+else loading = 1 *1000;
+
 export default {
   data: () => {
     return {
@@ -17,7 +23,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.isloaded = true;
-    }, 4000);
+    }, loading);
   },
 };
 </script>
