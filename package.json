@@ -1,7 +1,7 @@
 {
-  "name": "disgrow-visualization",
+  "name": "disgrowth",
   "version": "1.0.6",
-  "description": "Create your web visualization discord bots growth and statistics with ease.",
+  "description": "Visualize your discord bots growth into chartable web-app",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -26,6 +26,7 @@
     "chart.js": "^2.7.3",
     "disgrow": "^1.0.19",
     "hchs-vue-charts": "^1.2.8",
+    "lscache": "^1.3.2",
     "vue": "^2.5.17",
     "vue-chartjs": "^3.4.0",
     "vue-number-animation": "^1.1.2",
