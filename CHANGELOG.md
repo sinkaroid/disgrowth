@@ -1,3 +1,26 @@
+#### 1.0.6 (2022-07-18)
+
+##### Chores
+
+*  update static assets (fa698e54)
+* **release:**  1.0.7-alpha (a7458f46)
+
+##### Continuous Integration
+
+*  apply fixes for new configuration (d0b039cb)
+
+##### Documentation Changes
+
+*  make config comments looks clearly (273e4e40)
+
+##### New Features
+
+*  reduce api call, use memory cache (5b53314e)
+
+##### Performance Improvements
+
+*  proper memCacheExpire timeout (dcc333d3)
+
 #### 1.0.6 (2022-07-16)
 
 ##### Chores
