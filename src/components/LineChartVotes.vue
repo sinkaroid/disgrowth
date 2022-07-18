@@ -2,6 +2,7 @@
 import { Line, mixins } from "vue-chartjs";
 import { getRandomColor } from "../../src/base";
 import { inMemoryBotInfo } from "../base";
+import { lineChartVotesColor } from "../../config";
 
 export default {
   extends: Line,
@@ -73,8 +74,8 @@ export default {
           datasets: [
             {
               label: `${response.data.title}'s daily votes`,
-              backgroundColor: getRandomColor(),
-              pointBackgroundColor: getRandomColor(),
+              backgroundColor: lineChartVotesColor ? lineChartVotesColor : getRandomColor(),
+              pointBackgroundColor: lineChartVotesColor ? lineChartVotesColor : getRandomColor(),
               borderWidth: 1,
               pointBorderColor: getRandomColor(),
               data: reversedvotes_growth,

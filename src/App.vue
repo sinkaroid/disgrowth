@@ -17,7 +17,7 @@
       </ul>
     </div>
 
-    <div id="mybutton">
+    <div v-if="switchTheme" id="mybutton">
       <button type="button" @click="darkThemeSwitch" class="switch">
         Switch
       </button>
@@ -30,15 +30,17 @@
 <script>
 import themeChanger from "./switch.js";
 import Footer from "./components/Footer";
+import { switchTheme } from "../config";
 
 export default {
   name: "app",
   data() {
     return {
+      switchTheme: switchTheme,
       themeChanger: null,
       loading: false,
       all_users: null,
-      title: "The discord bots growth",
+      title: "Bot growth monitoring",
       sca: null,
     };
   },

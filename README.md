@@ -17,7 +17,7 @@ That's all! All you need just keep posting your bot stats, and you are good to g
 ## Getting started
 1. Read the prerequisites, make sure your bots is passed the test, and install: `npm install` / `yarn install`
 
-2. Change the `config.js` botId property to your bot's id.
+2. Change the `config.js` botId property to your bot's id, You must change the botId property, everything else can be default.
 
 3. Test the unit first by running `npm run test:mocha`, You should get passing test like:
 

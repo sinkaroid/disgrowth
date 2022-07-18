@@ -2,6 +2,7 @@
 import { Line, mixins } from "vue-chartjs";
 import { getRandomColor } from "../../src/base";
 import { inMemoryBotInfo } from "../base";
+import { lineChartColor } from "../../config";
 
 export default {
   extends: Line,
@@ -73,10 +74,10 @@ export default {
           datasets: [
             {
               label: `${response.data.title}'s total guilds`,
-              backgroundColor: getRandomColor(),
-              pointBackgroundColor: "white",
+              backgroundColor: lineChartColor ? lineChartColor : getRandomColor(),
+              pointBackgroundColor: lineChartColor ? lineChartColor : getRandomColor(),
               borderWidth: 1,
-              pointBorderColor: "#249EBF",
+              pointBorderColor: getRandomColor(),
               data: reversedTotal_server,
             },
           ],

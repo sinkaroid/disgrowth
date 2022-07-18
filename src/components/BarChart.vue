@@ -2,6 +2,7 @@
 import { Bar, mixins } from "vue-chartjs";
 import { getRandomColor } from "../../src/base";
 import { inMemoryBotInfo } from "../base";
+import { barChartColor } from "../../config";
 
 export default {
   extends: Bar,
@@ -73,8 +74,8 @@ export default {
           datasets: [
             {
               label: `${response.data.title}'s daily guilds`,
-              backgroundColor: getRandomColor(),
-              pointBackgroundColor: getRandomColor(),
+              backgroundColor: barChartColor ? barChartColor : getRandomColor(),
+              pointBackgroundColor: barChartColor ? barChartColor : getRandomColor(),
               borderWidth: 1,
               pointBorderColor: getRandomColor(),
               data: reversedserver_growth,

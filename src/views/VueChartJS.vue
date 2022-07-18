@@ -5,9 +5,9 @@
     <br />
     <img :src="avatar" alt="avatar" class="avatar" width="200" />
     <br /><br />
-    <a :href="topgglink" target="_blank" class="switch">Visit on Top.gg</a>
+    <a :href="topgglink" v-if="topggExternalButton" target="_blank" class="switch">Visit on Top.gg</a>
     <br /><br />
-    <table class="styled-table">
+    <table v-if="showPresentData" class="styled-table">
       <thead>
         <tr>
           <th>
@@ -25,7 +25,7 @@
           <td><h3>Current servers</h3></td>
           <td>
             <h3>
-              <number
+              <number v-if="animatedCounter"
                 ref="number1"
                 :from="1"
                 :to="today"
@@ -33,7 +33,8 @@
                 :duration="7"
                 :delay="2"
                 easing="Power1.easeOut"
-              />
+              /> 
+              <span v-else>{{ today }}</span>
             </h3>
           </td>
         </tr>
@@ -41,7 +42,7 @@
           <td><h3>New servers</h3></td>
           <td>
             <h3>
-              +<number
+              +<number v-if="animatedCounter"
                 ref="number1"
                 :from="1"
                 :to="today_growth"
@@ -50,6 +51,7 @@
                 :delay="2"
                 easing="Power1.easeOut"
               />
+              <span v-else>{{ today_growth }}</span>
             </h3>
           </td>
         </tr>
@@ -58,7 +60,7 @@
           <td><h3>Current votes</h3></td>
           <td>
             <h3>
-              <number
+              <number v-if="animatedCounter"
                 ref="number1"
                 :from="1"
                 :to="total_votes"
@@ -67,6 +69,7 @@
                 :delay="2"
                 easing="Power1.easeOut"
               />
+              <span v-else>{{ total_votes }}</span>
             </h3>
           </td>
         </tr>
@@ -75,7 +78,7 @@
           <td><h3>New votes</h3></td>
           <td>
             <h3>
-              +<number
+              +<number v-if="animatedCounter"
                 ref="number1"
                 :from="1"
                 :to="today_votes"
@@ -84,6 +87,7 @@
                 :delay="2"
                 easing="Power1.easeOut"
               />
+              <span v-else>{{ today_votes }}</span>
             </h3>
           </td>
         </tr>
@@ -96,7 +100,7 @@
         <h3>🗓️Monthly Growth</h3>
         <h1>
           +
-          <number
+          <number v-if="animatedCounter"
             ref="number1"
             :from="1"
             :to="average_server_growth_monthly"
@@ -105,6 +109,7 @@
             :delay="2"
             easing="Power1.easeOut"
           />
+          <span v-else>{{ average_server_growth_monthly }}</span>
           Servers
         </h1>
         <h3>Total Increments</h3>
@@ -115,7 +120,7 @@
         <h1>
           +
           <number
-            ref="number1"
+            ref="number1" v-if="animatedCounter"
             :from="1"
             :to="average_server_growth_daily"
             :format="theFormat"
@@ -123,6 +128,7 @@
             :delay="1"
             easing="Power1.easeOut"
           />
+          <span v-else>{{ average_server_growth_daily }}</span>
           Servers
         </h1>
         <h3>Daily Increments</h3>
@@ -134,7 +140,7 @@
         <h3>⌛Hourly Growth</h3>
         <h1>
           +
-          <number
+          <number v-if="animatedCounter"
             ref="number1"
             :from="1"
             :to="average_server_growth_hourly"
@@ -143,6 +149,7 @@
             :delay="2"
             easing="Power1.easeOut"
           />
+          <span v-else>{{ average_server_growth_hourly }}</span>
           Servers
         </h1>
         <h3>Hourly Data</h3>
@@ -155,17 +162,7 @@
       <div class="column">
         <h3>🎉Votes Growth</h3>
         <h1>
-          <number
-            ref="number1"
-            :from="1"
-            :to="total_votes"
-            :format="theFormat"
-            :duration="10"
-            :delay="2"
-            easing="Power1.easeOut"
-          />
-          votes /
-          <number
+          <number v-if="animatedCounter"
             ref="number1"
             :from="1"
             :to="average_votes_growth_monthly"
@@ -174,6 +171,18 @@
             :delay="2"
             easing="Power1.easeOut"
           />
+          <span v-else>{{ average_votes_growth_monthly }}</span>
+          /
+          <number
+            ref="number1" v-if="animatedCounter"
+            :from="1"
+            :to="total_votes"
+            :format="theFormat"
+            :duration="10"
+            :delay="2"
+            easing="Power1.easeOut"
+          />
+          <span v-else>{{ total_votes }}</span>
           votes
         </h1>
         <h3>Daily Increments</h3>
@@ -187,8 +196,8 @@
         </h2>
       </div>
     </div>
+    <div v-if="showPredictsData">
     <h1>According those data, we can predicts</h1>
-    <br />
     <table class="styled-table">
       <thead>
         <tr>
@@ -288,6 +297,9 @@
         </tr>
       </tbody>
     </table>
+    </div>
+    <!-- if predictsTable true, show <div> available </> -->
+    
     <br /><br />
   </section>
 </template>
@@ -299,6 +311,8 @@ import LineChartHourly from "@/components/LineChartHourly";
 import LineChartVotes from "@/components/LineChartVotes";
 import { inMemoryBotInfo } from "../base";
 import PageLoader from "@/components/PageLoader";
+import { showPredictsData, showPresentData, 
+  topggExternalButton, animatedCounter } from "../../config";
 
 export default {
   name: "VueChartJS",
@@ -359,6 +373,10 @@ export default {
       this.estimate_total_server_in_the_next_year =
         response.data.server_count +
         response.approximate_server_growth_annually;
+      this.showPredictsData = showPredictsData;
+      this.showPresentData = showPresentData;
+      this.topggExternalButton = topggExternalButton;
+      this.animatedCounter = animatedCounter;
     });
   },
   methods: {
