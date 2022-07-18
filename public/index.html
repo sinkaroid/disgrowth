@@ -28,19 +28,11 @@
   <noscript>
     <strong>Won't working properly without JavaScript enabled. Please enable it to continue.</strong>
   </noscript>
-  <div id="app">
-    <div id="loading__container">
-      <div><h2>Toot toot, Fetching data please wait...</h2></div>
-   </div>
-  </div>
+  <div id="app" v-cloak></div>
   <style>
-    #loading__container {
-    }
+    [v-cloak] > * { display:none }
+ [v-cloak]::before { content: "Loading…" }
   </style>
-  
-    <script type='text/javascript'>
-        var loading = document. getElementById("loading__container")
-    </script>
 </body>
 
 </html>
