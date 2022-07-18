@@ -1,70 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
 
-  <!DOCTYPE html>
-  <html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="title" content="Scathach - Disgrowth">
+  <meta name="description" content="Visualize your discord bots growth into chartable web-app & statistics with ease. Updates hourly">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="sinkaroid" />
+  <meta property="og:url" content="https://scathach.dev">
+  <meta property="og:title" content="Scathach - Disgrowth">
+  <meta property="og:description" content="Visualize your discord bots growth into chartable web-app & statistics with ease. Updates hourly">
+  <meta property="og:image" content="https://cdn.discordapp.com/attachments/952117487166705747/997947103550656603/sca.webp">
+  <meta name="author" content="Scathach - Disgrowth" />
+  <meta content="#FF00FF" name="theme-color" />
+  <meta content="#FF00FF" name="msapplication-navbutton-color" />
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet">
+  <title>Scathach bot</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+  <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
+  <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+</head>
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="Scathach - Disgrowth">
-    <meta name="description"
-      content="Visualize your discord bots growth into chartable web-app & statistics with ease. Updates hourly">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="sinkaroid" />
-    <meta property="og:url" content="https://scathach.dev">
-    <meta property="og:title" content="Scathach - Disgrowth">
-    <meta property="og:description"
-      content="Visualize your discord bots growth into chartable web-app & statistics with ease. Updates hourly">
-    <meta property="og:image"
-      content="https://cdn.discordapp.com/attachments/952117487166705747/997947103550656603/sca.webp">
-    <meta name="author" content="Scathach - Disgrowth" />
-    <meta content="#FF00FF" name="theme-color" />
-    <meta content="#FF00FF" name="msapplication-navbutton-color" />
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet">
-    <title>Scathach bot</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
-    <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
-    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
-  </head>
-
-  <body>
-    <noscript>
-      <strong>Won't working properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app">
-      <div id="loading__container">
-        <div>Toot toot, Plase wait!</div>
-      </div>
-    </div>
-    <style>
-      #loading__container {
-        border: 16px solid #f3f3f3;
-        /* Light grey */
-        border-top: 16px solid #3498db;
-        /* Blue */
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      
-    </style>
-
+<body>
+  <noscript>
+    <strong>Won't working properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+  <div id="app">
+    <div id="loading__container">
+      <div>Toot toot, Fetching data please wait...</div>
+   </div>
+  </div>
+  <style>
+    #loading__container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  
     <script type='text/javascript'>
-      var loading = document. getElementById("loading__container")
-       
+        var loading = document. getElementById("loading__container")
     </script>
-  </body>
+</body>
 
-  </html>
+</html>
