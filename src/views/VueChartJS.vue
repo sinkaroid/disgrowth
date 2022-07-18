@@ -207,7 +207,7 @@
             </h3>
           </th>
           <th>
-            <h3><b>Approximate</b></h3>
+            <h3><b>Approximate / Can be more and less</b></h3>
           </th>
         </tr>
       </thead>
@@ -287,6 +287,24 @@
         </tr>
 
         <tr class="active-row">
+          <td><h2>Total servers (3 years later)</h2></td>
+          <td>
+            <h2>
+              <img :src="avatar" class="small-avatar" /> {{ name }} should
+              get<number
+                ref="number1"
+                :from="1"
+                :to="estimate_total_server_in_the_3_years"
+                :format="theFormat"
+                :duration="10"
+                :delay="2"
+                easing="Power1.easeOut"
+              />total servers
+            </h2>
+          </td>
+        </tr>
+
+        <tr class="active-row">
           <td><h2>Monthly rewards</h2></td>
           <td>
             <h2>
@@ -344,6 +362,8 @@ export default {
       today_votes: null,
       approximate_after_6: null,
       estimate_total_server_in_the_next_year: null,
+      estimate_total_server_in_the_3_years: null,
+      estimate_total_server_in_the_5_years: null,
     };
   },
   async created() {
@@ -377,6 +397,10 @@ export default {
       this.showPresentData = showPresentData;
       this.topggExternalButton = topggExternalButton;
       this.animatedCounter = animatedCounter;
+      this.estimate_total_server_in_the_3_years = 
+        response.approximate_server_growth_annually * 3 + response.data.server_count;
+
+        
     });
   },
   methods: {
